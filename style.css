@@ -10,7 +10,7 @@
 
 /* dark theme — applied when the toggle checkbox is checked */
 :root:has(.theme-switch:checked) {
-  --bg: #121212;
+  --bg: #000000;
   --text: #e6e6e3;
   --muted: #9a9a94;
   --accent: #6fcf97;
