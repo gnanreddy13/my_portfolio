@@ -55,8 +55,7 @@
 }
 
 body {
-  font-family: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono",
-    Menlo, Consolas, monospace;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
   font-size: 15px;
   line-height: 1.7;
   background: var(--bg);
