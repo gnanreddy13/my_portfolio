@@ -1,3 +1,53 @@
+/* ---------- tokens ---------- */
+:root {
+  --bg: #fbfbf9;
+  --text: #1c1c1c;
+  --muted: #6b6b6b;
+  --accent: #2f7d4f;
+  --rule: #e2e2de;
+  --max-width: 620px;
+}
+
+/* dark theme — applied when the toggle checkbox is checked */
+:root:has(.theme-switch:checked) {
+  --bg: #121212;
+  --text: #e6e6e3;
+  --muted: #9a9a94;
+  --accent: #6fcf97;
+  --rule: #2a2a2a;
+}
+
+/* ---------- theme toggle ---------- */
+.theme-switch {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  cursor: pointer;
+  color: var(--muted);
+  user-select: none;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+}
+
+.theme-switch:focus-visible + .theme-toggle {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* show the right label for the current theme */
+.on-dark { display: none; }
+:root:has(.theme-switch:checked) .on-light { display: none; }
+:root:has(.theme-switch:checked) .on-dark { display: inline; }
+
+/* ---------- base ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -5,451 +55,153 @@
 }
 
 body {
-  font-family: "Share Tech Mono", monospace;
-  background-color: #efece5;
-  color: #111;
-  line-height: 1.6;
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono",
+    Menlo, Consolas, monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.25rem 3rem;
+  position: relative;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
+@media (prefers-reduced-motion: reduce) {
+  body { transition: none; }
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #111;
-  text-decoration: none;
-}
-
-.logo:hover {
-  color: #a5a5a5;
-  cursor: pointer;
-}
-
-.nav-menu a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.nav-menu a:hover {
-  color: #000;
-}
-
-.hero {
-  background-color: #efece5;
-  text-align: center;
-  padding: 120px 20px 290px;
-}
-
-.hero h1 {
-  font-size: 5rem;
-  margin-top: 180px;
-  color: rgb(0, 0, 0);
-}
-
-.hero .role {
-  font-size: 2.5rem;
-  color: #333;
-}
-
-.section {
-  padding: 80px 40px;
-  background-color: #efece5;
-}
-
-.section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #111;
-}
-
-.projects-grid,
-.experience-list,
-.skills-tags,
-.more-work-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.contact {
-  background-color: #f5f5f5;
-  color: #111;
-  padding: 80px 40px;
-}
-
-.contact h2 {
-  font-size: 1.8rem;
-  text-align: center;
-  font-weight: bold;
-}
-
-.contact-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 30px auto 0;
-  padding: 0 20px 60px;
-}
-
-.contact-info {
-  flex: 1;
-  min-width: 260px;
-  font-size: 1rem;
-}
-
-.contact-info p {
-  margin-bottom: 20px;
-}
-
-.contact-info ul {
+/* ---------- skills ---------- */
+.skills {
   list-style: none;
-  padding: 0;
-}
-
-.contact-info li {
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-.contact-info .icon {
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.contact-info a {
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
-  transition: color 0.1s;
-}
-
-.contact-info a:hover {
-  color: #007acc;
-}
-
-.contact-form {
-  flex: 1;
-  min-width: 300px;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.1s ease;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.contact-form:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-  transform: translate(-4px, -4px);
-}
-
-.contact-form h3 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-family: "Share Tech Mono", monospace;
-}
-
-.contact-form button {
-  padding: 12px;
-  font-size: 1rem;
-  background-color: #111;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease;
-  font-family: "Share Tech Mono", monospace;
-}
-
-.contact-form button:hover {
-  background-color: #333;
-}
-
-.aboutme-content {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
-}
-
-.aboutme-content {
-  color: #000;
-  text-align: center;
-}
-
-.skills-tags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  padding: 20px 0;
+  gap: 0.6rem;
 }
 
-.skills-tags span {
-  background-color: #f5f5f5;
-  padding: 10px 16px;
-  font-size: 0.95rem;
-  color: #111;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  font-weight: 500;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.1s ease;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+.skills li {
+  border: 1px solid var(--rule);
+  padding: 0.15rem 0.6rem;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
-.skills-tags span:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-  transform: translate(-2px, -2px);
+/* ---------- intro ---------- */
+h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-.experience-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-  max-width: 800px;
-  width: 100%;
-  margin: 20px auto;
-  transition: box-shadow 0.1s ease;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+.cursor {
+  color: var(--accent);
+  animation: blink 1.1s steps(1) infinite;
 }
 
-.experience-card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-  transform: translate(-4px, -4px);
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
-.experience-card h3 {
-  margin-bottom: 5px;
-  font-size: 1.3rem;
-  color: #222;
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
 }
 
-.experience-card .duration {
-  font-style: bold;
-  color: #777;
-  margin-bottom: 15px;
+.role {
+  color: var(--muted);
+  margin-top: 0.25rem;
 }
 
-.experience-card ul {
-  padding-left: 20px;
+.bio {
+  margin-top: 1.25rem;
 }
 
-.experience-card li {
-  margin-bottom: 10px;
-  line-height: 1.6;
+/* ---------- sections ---------- */
+section {
+  margin-top: 4rem;
 }
 
-.project-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  width: 100%;
-  max-width: 300px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-  transition: box-shadow 0.1s ease;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 1.5rem;
 }
 
-.project-card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-  transform: translate(-4px, -4px);
+.path {
+  color: var(--muted);
+  font-weight: 400;
 }
 
-.projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+/* ---------- projects ---------- */
+.projects {
+  list-style: none;
 }
 
-.project-card h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: #222;
+.projects li + li {
+  margin-top: 1.5rem;
 }
 
-.project-card a {
-  text-decoration: none;
-  color: #007acc;
+.project-name {
+  font-weight: 600;
 }
 
-.project-card .project-meta {
-  font-style: bold;
-  color: #777;
-  margin-bottom: 10px;
+.projects p {
+  color: var(--muted);
+  margin-top: 0.2rem;
 }
 
-.project-card p {
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-  color: #333;
+/* ---------- links / contact ---------- */
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
 }
 
-.project-link {
-  margin-top: 20px;
-  text-align: center;
+a:hover,
+a:focus-visible {
+  color: var(--accent);
 }
 
-.project-link a {
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.links {
+  list-style: none;
+}
+
+.links li + li {
+  margin-top: 0.5rem;
+}
+
+.label {
   display: inline-block;
-  padding: 8px 14px;
-  background-color: #111;
-  color: white;
-  font-weight: bold;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  min-width: 5.5rem;
+  color: var(--muted);
 }
 
-.project-link a:hover {
-  background-color: #333;
+/* ---------- footer ---------- */
+footer {
+  margin-top: 5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
-.projects-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.project-card {
-  flex: 1 1 260px;
-  max-width: 280px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* 🔹 Tablet & Large Phone View (≤ 768px) */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .nav-menu {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero .role {
-    font-size: 1.2rem;
-  }
-
-  .section {
-    padding: 60px 20px;
-  }
-
-  .section h2 {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .contact-content {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  #aboutme,
-  #skills,
-  #experiences,
-  #projects,
-  #contact {
-    scroll-margin-top: 160px;
-  }
-}
-
-/* 🔹 Small Phone View (≤ 480px) */
+/* ---------- small screens ---------- */
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
+  body {
+    padding-top: 2.5rem;
   }
 
-  .hero .role {
-    font-size: 1rem;
+  .label {
+    display: block;
+    min-width: 0;
   }
-
-  .section h2 {
-    font-size: 1.4rem;
-  }
-
-  .logo {
-    font-size: 1rem;
-  }
-
-  .skills-tags span {
-    font-size: 0.8rem;
-    padding: 8px 12px;
-  }
-
-  .project-card {
-    padding: 16px;
-  }
-
-  .experience-card {
-    padding: 20px;
-  }
-}
-
-#skills {
-  scroll-margin-top: 100px; /* adjust based on your navbar height */
-}
-
-#aboutme {
-  scroll-margin-top: 100px;
-}
-
-#experiences {
-  scroll-margin-top: 100px;
-}
-
-#projects {
-  scroll-margin-top: 100px;
-}
-
-#contact {
-  scroll-margin-top: 100px;
 }

@@ -1,391 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gnan Reddy Bobba | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>💼</text></svg>"
-    />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <header class="navbar">
-      <a href="#" class="logo"><\> 👨🏻‍💻 Gnan Reddy Bobba <\></a>
-      <nav class="nav-menu">
-        <a href="#aboutme"
-          ><u style="text-decoration-style: dashed">About Me</u></a
-        >
-        <a href="#skills"
-          ><u style="text-decoration-style: dashed">Skills</u></a
-        >
-        <a href="#experiences"
-          ><u style="text-decoration-style: dashed">Experiences</u></a
-        >
-        <a href="#projects"
-          ><u style="text-decoration-style: dashed">Projects</u></a
-        >
-        <a href="#contact"
-          ><u style="text-decoration-style: dashed">Contact</u></a
-        >
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="portfolio of gnan reddy b — student.">
+  <title>portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1>Gnan Reddy Bobba</h1>
-      <p class="role">Machine Learning Intern @ Feynn Labs</p>
+  <input type="checkbox" id="theme-switch" class="theme-switch">
+  <label for="theme-switch" class="theme-toggle" title="Toggle dark/light mode">
+    <span class="on-light">[ dark ]</span><span class="on-dark">[ light ]</span>
+  </label>
+
+  <header class="intro">
+    <h1>gnan reddy b<span class="cursor" aria-hidden="true">▊</span></h1>
+    <p class="role">student</p>
+  </header>
+
+  <main>
+
+    <section id="about">
+      <h2><span class="path">~/</span>about</h2>
+      <p>
+        i'm a developer based in hyderabad. 
+        i care about performance and scaling of the software.
+        away from the keyboard i read manga/manhwa, 
+        watch anime and like to do gym.
+      </p>
     </section>
 
-    <!-- About Me Section -->
-    <section id="aboutme" class="section">
-      <h2><\> ABOUT ME <\></h2>
-      <div class="aboutme-content">
-        <p>
-          Hi I'm Gnan Reddy Bobba 👋 I'm a passionate software developer 💻 with
-          a strong background 💪 in Python, MySQL, AI/ML technologies and basic
-          background 👍 in Frontend development. I’m actively exploring
-          opportunities in AI Engineering, ML Development, and Data Science
-          roles where I can apply my analytical skills and engineering mindset
-          🧠 to create impact 👊.
-        </p>
-        <br />
-        <p>
-          <a
-            href="https://docs.google.com/document/d/1113kq8yqxXT74nhyntgDcArdygVrM445uahw4_HF5zQ/edit?usp=sharing"
-            target="_blank"
-            style="text-decoration: none"
-            ><u style="text-decoration-style: dashed"
-              ><b>CLICK HERE TO VIEW MY RESUME</b></u
-            ></a
-          >
-        </p>
-      </div>
+    <section id="skills">
+      <h2><span class="path">~/</span>skills</h2>
+      <ul class="skills">
+        <li>python</li>
+        <li>golang</li>
+        <li>postgresql</li>
+        <li>html</li>
+        <li>css</li>
+        <li>git</li>
+      </ul>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-      <h2><\> SKILLS <\></h2>
-      <div class="skills-tags">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>MySQL</span>
-        <span>Java/Java GUI</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>XML</span>
-        <span>NumPy</span>
-        <span>Pandas</span>
-        <span>Matplotlib</span>
-        <span>Seaborn</span>
-        <span>Scikit-learn</span>
-        <span>Pytorch</span>
-        <span>TensorFlow</span>
-        <span>Keras</span>
-        <span>XGBoost</span>
-        <span>OpenCV</span>
-        <span>NLTK</span>
-        <span>Streamlit</span>
-        <span>Joblib</span>
-        <span>Docker</span>
-        <span>Git/GitHub</span>
-        <span>Anaconda</span>
-        <span>Jupyter Notebook</span>
-        <span>Google Colab</span>
-        <span>VS Code</span>
-        <span>Blender</span>
-        <span>Linux</span>
-      </div>
+    <section id="projects">
+      <h2><span class="path">~/</span>projects</h2>
+      <ul class="projects">
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/gnanreddy11/calculator-cli" class="project-name">calculator-cli</a>
+          <p>a simple cli based calculator written in golang.</p>
+        </li>
+      </ul>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experiences" class="section">
-      <h2><\> EXPERIENCES <\></h2>
-      <div class="experience-card">
-        <h3>🏢 Machine Learning Intern – Feynn Labs, Remote</h3>
-        <p class="duration">Mar 2025 – Present</p>
-        <ul>
-          <li>
-            Engineered ClinicRecall AI to predict patient no-shows and automate
-            follow-ups; outlined system architecture for clinic adoption.
-          </li>
-          <li>
-            Applied KMeans on 1,400+ McDonald’s records to extract actionable
-            customer segments, enabling strategic behavioral targeting.
-          </li>
-          <li>
-            Analyzed ~9,100 EV registrations across demographics and fuel types;
-            surfaced adoption trends in Tier-2 cities and framed data-backed
-            entry strategies.
-          </li>
-        </ul>
-      </div>
-
-      <div class="experience-card">
-        <h3>🏢 Data Science Intern – Prodigy InfoTech, Remote</h3>
-        <p class="duration">Mar 2025 – Apr 2025</p>
-        <p>
-          Completed 4 real-world projects applying Python, Scikit-learn, Pandas,
-          and NLP techniques:
-        </p>
-        <ul>
-          <li>
-            <a
-              href="https://github.com/gnanreddy11/PRODIGY_DS_01"
-              target="_blank"
-              style="text-decoration-style: dashed"
-              ><b>Distribution Analysis</b></a
-            >: Visualized 60+ years of demographic trends (1960–2023) via
-            Matplotlib and Seaborn, uncovering regional shifts and long-term
-            demographic changes.
-          </li>
-          <li>
-            <a
-              href="https://github.com/gnanreddy11/PRODIGY_DS_02"
-              target="_blank"
-              style="text-decoration-style: dashed"
-              ><b>Game Sales EDA</b></a
-            >: Explored 16,000+ titles, identifying top-performing genres and
-            regions.
-          </li>
-          <li>
-            <a
-              href="https://github.com/gnanreddy11/PRODIGY_DS_03"
-              target="_blank"
-              style="text-decoration-style: dashed"
-              ><b>Purchase Prediction</b></a
-            >: Trained and deployed an XGBoost model achieving 87.5% accuracy
-            and 48% recall for subscriber prediction, addressing class imbalance
-            through resampling and label encoding techniques.
-          </li>
-          <li>
-            <a
-              href="https://github.com/gnanreddy11/PRODIGY_DS_04"
-              target="_blank"
-              style="text-decoration-style: dashed"
-              ><b>Sentiment Analysis</b></a
-            >: Processed 10,000+ tweets using TF-IDF and NLTK to classify
-            multi-class sentiment.
-          </li>
-        </ul>
-      </div>
-
-      <div class="experience-card">
-        <h3>
-          🏢 Data Science Intern – National Small Industries Corporation Ltd,
-          Hyderabad
-        </h3>
-        <p class="duration">Jul 2023 – Aug 2023</p>
-        <ul>
-          <li>
-            Performed extensive data cleaning and analysis across 5 datasets,
-            enhancing quality and consistency.
-          </li>
-          <li>
-            Executed exploratory and predictive analysis using supervised and
-            unsupervised techniques.
-          </li>
-        </ul>
-      </div>
+    <section id="contact">
+      <h2><span class="path">~/</span>contact</h2>
+      <ul class="links">
+        <li><span class="label">email</span> <a href="mailto:gnanreddy11@gmail.com">gnanreddy11@gmail.com</a></li>
+        <li><span class="label">github</span> <a target="_blank" rel="noopener noreferrer" href="https://github.com/gnanreddy11">github.com/gnanreddy11</a></li>
+        <li><span class="label">linkedin</span> <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/gnanreddy11/">linkedin.com/in/gnanreddy11</a></li>
+      </ul>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-      <h2><\> PROJECTS <\></h2>
-      <div class="projects-wrapper">
-        <div class="projects-grid">
-          <!-- 1. Metro Rail Forecasting -->
-          <div class="project-card">
-            <div class="project-content">
-              <h3>🚝 Forecasting Metro Rail Ridership</h3>
-              <p class="project-meta">
-                Mahindra University | Feb 2025 – Present
-              </p>
-              <p>
-                We're building a Python-based model that predicts how people
-                will use the metro system in the future. This helps city
-                planners make smarter decisions for better transportation.
-              </p>
-            </div>
-            <div class="project-link">
-              <a
-                href="https://github.com/Metro-Prediction/Backend"
-                target="_blank"
-                >LINK</a
-              >
-            </div>
-          </div>
+  </main>
 
-          <!-- 2. Feynn Labs AI Projects -->
-          <div class="project-card">
-            <div class="project-content">
-              <h3>🤖 AI Projects @ Feynn Labs</h3>
-              <p class="project-meta">Internship | Mar 2025 – Present</p>
-              <p>
-                Worked on ClinicRecall AI to predict patient no-shows, performed
-                behavioral segmentation for McDonald's case study, and developed
-                EV market entry strategies using adoption life cycle analysis.
-              </p>
-            </div>
-            <div class="project-link">
-              <a
-                href="https://github.com/gnanreddy11/EV_Market_Analysis"
-                target="_blank"
-                >LINK</a
-              >
-            </div>
-          </div>
+  <footer>
+    <p>© 2026 gnanreddy13 · built with html &amp; css</p>
+  </footer>
 
-          <!-- 3. Prodigy Mini Projects -->
-          <div class="project-card">
-            <div class="project-content">
-              <h3>📂 Mini Projects @ Prodigy InfoTech</h3>
-              <p class="project-meta">Internship | Mar 2025 – Apr 2025</p>
-              <p>
-                Completed 4 real-world projects covering EDA, predictive
-                modeling, purchase prediction, and sentiment analysis —
-                including games sales, social media tweets, and subscriber
-                classification.
-              </p>
-            </div>
-            <div class="project-link">
-              <a
-                href="https://github.com/gnanreddy11/PRODIGY_DS_01"
-                target="_blank"
-                >LINK</a
-              >
-            </div>
-          </div>
-
-          <!-- 4. Driver Fatigue Detection -->
-          <div class="project-card">
-            <div class="project-content">
-              <h3>🚘 Driver Fatigue Detection</h3>
-              <p class="project-meta">
-                Mahindra University | Aug 2024 – Dec 2024
-              </p>
-              <p>
-                We used EEG brainwave data to detect signs of driver tiredness
-                in real time. The goal is to reduce accidents by alerting
-                drivers when they’re not alert enough to continue safely.
-              </p>
-            </div>
-            <div class="project-link">
-              <a
-                href="https://github.com/gnanreddy11/Driver_Fatigue_Detection"
-                target="_blank"
-                >LINK</a
-              >
-            </div>
-          </div>
-
-          <!-- 5. Customer Churn Prediction -->
-          <div class="project-card">
-            <div class="project-content">
-              <h3>👥 Customer Churn Prediction</h3>
-              <p class="project-meta">Personal Project | Mar 2025</p>
-              <p>
-                This project predicts which telecom users might leave the
-                service. I created a simple web app using Streamlit that shows
-                churn predictions and helps companies improve retention.
-              </p>
-            </div>
-            <div class="project-link">
-              <a
-                href="https://github.com/gnanreddy11/IBM-Telco-Churn-App"
-                target="_blank"
-                >LINK</a
-              >
-            </div>
-          </div>
-
-          <!-- 6. House Price Prediction -->
-          <div class="project-card">
-            <div class="project-content">
-              <h3>🏠 House Price Prediction</h3>
-              <p class="project-meta">Personal Project | Mar 2025</p>
-              <p>
-                Built a regression model using XGBoost to predict house prices
-                from 13 engineered features. Optimized performance through
-                GridSearchCV and deployed an interactive app using Streamlit.
-              </p>
-            </div>
-            <div class="project-link">
-              <a
-                href="https://github.com/gnanreddy11/House-Price-Prediction"
-                target="_blank"
-                >LINK</a
-              >
-            </div>
-          </div>
-
-          <!-- 7. IMDB Movie EDA -->
-          <div class="project-card">
-            <div class="project-content">
-              <h3>🎬 IMDB Top 1000 Movie EDA</h3>
-              <p class="project-meta">Personal Project | Mar 2025</p>
-              <p>
-                Performed exploratory analysis on the top 1,000 IMDb movies
-                using visualizations to uncover trends in genres, ratings, gross
-                earnings, and the evolution of cinema across decades.
-              </p>
-            </div>
-            <div class="project-link">
-              <a
-                href="https://github.com/gnanreddy11/IMDB-Movie-EDA"
-                target="_blank"
-                >LINK</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-      <h2>LET’S WORK TOGETHER</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <p>
-            I'm currently available for freelance projects 😎, full-time roles
-            💪, or collaborations 🤝. If you'd like to discuss a project or just
-            say hello, get in touch! This website is purely built on HTML and
-            CSS. Thank you for visiting here ^_^
-          </p>
-          <ul>
-            <li>
-              <span class="icon">📩</span
-              ><a href="mailto:gnanreddy11@gmail.com">gnanreddy11@gmail.com</a>
-            </li>
-            <li>
-              <span class="icon">📞</span
-              ><a href="tel:+919440683620">+91 94406 83620</a>
-            </li>
-            <li>
-              <span class="icon">🔗</span
-              ><a href="https://www.linkedin.com/in/gnanreddy11" target="_blank"
-                >LinkedIn</a
-              >
-            </li>
-            <li>
-              <span class="icon">💻</span
-              ><a href="https://github.com/gnanreddy11" target="_blank"
-                >GitHub</a
-              >
-            </li>
-          </ul>
-        </div>
-        <form class="contact-form">
-          <h3>Send a Message 📨</h3>
-          <input type="text" placeholder="Your name" required />
-          <input type="email" placeholder="Your email" required />
-          <textarea placeholder="Your message..." required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </section>
-  </body>
+</body>
 </html>
