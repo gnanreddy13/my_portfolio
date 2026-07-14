@@ -151,6 +151,11 @@ h2 {
   margin-top: 0.2rem;
 }
 
+/* ---------- references ---------- */
+.reference-name {
+  font-weight: 600;
+}
+
 /* ---------- links / contact ---------- */
 a {
   color: var(--text);
